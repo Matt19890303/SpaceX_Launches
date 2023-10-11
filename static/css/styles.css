@@ -1,26 +1,83 @@
-h1 {
-    /* color: blue; */
-    padding: 20px;
-    
+
+@font-face {
+    font-family: SpaceX_Font;
+    src: url(SpaceX.ttf);
+ }
+  
+
+
+body {
+    /* background-color: pink; */
+    margin: 0;
+    padding: 0;
+    color: black;
+    position: relative;
+    background-image: url("/static/images/dragon_in_space.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+.header_container {
+    /* border: solid green; */
+    /* https://stackoverflow.com/questions/50999833/set-background-image-in-html-body-using-python-flask-framework */
+    /* background-image: url("/static/images/stars-1654074_1280.jpg"); */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header_container h3 {
+    /* border: solid blue; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.header_container img {
+    /* border: solid red; */
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* .falcon9_pic {
+    border: solid red;
+    z-index: -10;
+    padding-top: 50px;
+    padding:5px;
+    position: absolute;
+    margin: 0 auto;
+    left: 40%;
+    opacity: 0.6;
+} */
+
+
+.nav {
+    margin-bottom: 50px;
+    background-color: none;
+    /* background-image: url("/static/images/stars-3.jpg"); */
+}
+
+
 .launch-card {
-    border: 1px solid #eaeaea;
+    color: white;
     padding: 20px;
     margin-top: 20px;
-    border-radius: 5px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0,1); */
-    /* transition: box-shadow 0.3s; */
-    transition: scale 0.5s;
     display: flex;
     flex-direction: row;
     align-items: center;
+    /* From https://css.glass */
+    background: rgba(190, 216, 250, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.11);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .launch-card:hover {
-    scale: 1.02;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.09);
 }
 
 .launch-image {
@@ -36,9 +93,8 @@ h1 {
     margin-bottom: 15px;
 }
 
-
-.launch-links a:link, a:visited {
-    background-color: rgb(58, 58, 190);
+.launch-links a:link, .launch-links a:visited {
+    background-color: #005288;
     color: white;
     padding: 8px;
     text-align: center;
@@ -47,8 +103,21 @@ h1 {
     margin-right: 5px;
     border-radius: 5%;
   }
-  
-  .launch-links a:hover, a:active {
-    color: #eaeaea;
-    background-color: rgb(56, 56, 153);
+
+  .launch-links a:hover, .launch-links a:active {
+    color: white;
+    background-color: #004a7a;
   }
+
+  /* https://stackoverflow.com/questions/51701512/how-to-change-the-color-of-active-tab-in-bootstrap */
+  .nav-tabs .nav-item .nav-link {
+    color: white;
+    font-family: SpaceX_Font;
+  }
+  
+  .nav-tabs .nav-item .nav-link.active {
+    color: white;
+    background-color: #005288;
+  }
+
+ 

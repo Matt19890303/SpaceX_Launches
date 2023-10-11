@@ -12,7 +12,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}"/>
 <body>
-    <h1>SpaceX Launches</h1>
+    <div class="header_container">
+        <img src="{{ url_for('static', filename='images/logoSpaceX.png') }}" />
+        <!-- <div>
+            <h3>Launches</h3>
+        </div> -->
+    </div>
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -25,6 +30,10 @@
             <a class="nav-link" data-toggle="tab" href="#upcoming">Upcoming</a>
         </li>
     </ul>
+
+    <!-- <div class="falcon9_pic">
+        <img src="{{ url_for('static', filename='images/pngegg(2).png') }}" />
+    </div> -->
 
     <div class="tab-content">
         <div id="successful" class="container tab-pane active">
