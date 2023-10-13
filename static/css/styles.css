@@ -1,9 +1,8 @@
 
 @font-face {
-    font-family: SpaceX_Font;
-    src: url(SpaceX.ttf);
- }
-  
+  font-family: 'SpaceX';
+  src: url('/static/SpaceX.woff2') format('woff2'),
+}
 
 
 body {
@@ -16,6 +15,7 @@ body {
     /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
+    /* max-width: 100vh; */
 }
 
 .header_container {
@@ -28,17 +28,21 @@ body {
 }
 
 .header_container h3 {
-    /* border: solid blue; */
+    /* border: solid red; */
     color: white;
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    /* margin-right: 80px; */
+    font-family: 'SpaceX', sans-serif;
+    font-size: 20px;
 }
 
 .header_container img {
     /* border: solid red; */
-    width: 800px;
-    margin: 0 auto;
+    width: 320px;
+    display: flex;
+    justify-content: center;
 }
 
 /* .falcon9_pic {
@@ -63,9 +67,10 @@ body {
 .launch-card {
     color: white;
     padding: 20px;
+    max-width: 100%;
     margin-top: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     /* From https://css.glass */
     background: rgba(190, 216, 250, 0.19);
@@ -112,7 +117,9 @@ body {
   /* https://stackoverflow.com/questions/51701512/how-to-change-the-color-of-active-tab-in-bootstrap */
   .nav-tabs .nav-item .nav-link {
     color: white;
-    font-family: SpaceX_Font;
+    font-family: 'SpaceX', sans-serif;
+    font-size: 10px;
+
   }
   
   .nav-tabs .nav-item .nav-link.active {
@@ -120,4 +127,44 @@ body {
     background-color: #005288;
   }
 
- 
+
+  .footer_container {
+    border: solid 1px red;
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    color: white;
+  } 
+
+
+
+
+  /* For mobile phones: */
+  @media only screen and (min-width: 450px) {
+    .launch-card {
+        max-width: 100%;
+        flex-direction: row;
+    }
+
+    .header_container img {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .header_container h3 {
+      margin-right: 80px;
+      font-size: 30px;
+
+    }
+
+    .nav-tabs .nav-item .nav-link {
+      font-size: 15px;
+    }
+  }
+
+  @media only screen and (min-width: 760px) {
+    /* For desktop: */
+    .header_container img {
+        width: 700px;
+    }
+  }
