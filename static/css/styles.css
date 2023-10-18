@@ -137,6 +137,19 @@ body {
   } 
 
 
+  .first_container {
+    border: solid 1px red;
+  }
+
+  .first_container_header {
+    font-size: 20px;
+    color: white;
+  }
+
+  .first_container_text {
+    color: white;
+  }
+
 
 
   /* For mobile phones: */
@@ -158,7 +171,7 @@ body {
     }
 
     .nav-tabs .nav-item .nav-link {
-      font-size: 15px;
+      font-size: 12px;
     }
   }
 
