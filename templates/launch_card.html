@@ -3,9 +3,7 @@
 <div class="launch-card">
     <!-- Look for image to display -->
     {% if launch.links.patch.large %}
-    <img src="{{launch.links.patch.large}}"
-    alt="{{launch.name}}"
-    class="launch-image"/>
+    <img src="{{launch.links.patch.large}}" alt="{{launch.name}}" class="launch-image"/>
     {% endif %}
     <div>
         <div class="launch-title">{{launch.name}}</div>
@@ -20,7 +18,6 @@
             <a href="{{launch.links.article}}" target="_blank">Article</a>
             <a href="{{launch.links.wikipedia}}" target="_blank">Wikipedia</a>
         </div>
-
     </div>
 </div>
 {% endmacro %}

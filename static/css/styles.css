@@ -128,6 +128,26 @@ body {
   }
 
 
+  /* Upcoming */
+
+  .upcoming-launch-card {
+    color: white;
+    padding: 20px;
+    /* max-width: 100%; */
+    margin-top: 20px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* From https://css.glass */
+    background: rgba(190, 216, 250, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.11);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+
   .footer_container {
     border: solid 1px red;
     padding: 200px;
@@ -136,19 +156,23 @@ body {
     color: white;
   } 
 
-
   .first_container {
     border: solid 1px red;
-  }
-
-  .first_container_header {
-    font-size: 20px;
     color: white;
   }
 
-  .first_container_text {
+  .launch_card {
+    border: solid 1px blue;
     color: white;
+
   }
+
+  .missionData {
+    border: solid 1px red;
+    max-width: 470px;
+  }
+
+ 
 
 
 

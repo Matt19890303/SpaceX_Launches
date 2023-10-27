@@ -1,5 +1,7 @@
 <!-- Allows us to use launch_card.html here -->
 {% from "launch_card.html" import render_launch %}
+{% from "launch_card.html" import upcoming_launch %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,14 +48,26 @@
         </div>
 
         <div id="upcoming" class="container tab-pane fade">
-            <!-- {% for launch in launches.upcoming %}
-            {{render_launch(launch)}}
-            {% endfor %} -->
+            <!-- <div class="launch_card">
+                <div class="first_container">
+                    <p class="first_container_header">{{name}}</p>
+                    <p class="first_container_text">{{text}}</p>
+                </div> 
+            </div> -->
             <div class="first_container">
-                <p class="first_container_header">{{name}}</p>
-                <p class="first_container_text">{{text}}</p>
+                {% for i in range(data_length) %}
+                <div class="upcoming-launch-card">
+                    <p>Mission Name: {{ mission_name[i] }}</p>
+                    <p>Date: {{ dates[i] }}</p>
+                    <p class="missionData">{{ mission_data_list[i] }}</p>
+                    <p>Description: {{ descriptions[i] }}</p>
+                </div>
+                {% endfor %}
             </div>
+
         </div>
+    </div>
+            
     </div>
 
     <div class="footer_container">
