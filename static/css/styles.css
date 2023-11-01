@@ -59,7 +59,6 @@ body {
 .nav {
     margin-bottom: 50px;
     background-color: none;
-    /* background-image: url("/static/images/stars-3.jpg"); */
 }
 
 
@@ -257,18 +256,6 @@ body {
   text-align: center;
   text-decoration:none
 }
-
-
-.footer_container {
-  border: solid 1px red;
-  padding: 200px;
-  display: flex;
-  justify-content: center;
-  color: white;
-} 
-
-
-
 
   /* For mobile phones: */
   @media only screen and (min-width: 450px) {
