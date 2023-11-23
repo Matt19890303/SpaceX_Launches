@@ -248,6 +248,7 @@ body {
   display: inline-block;
   margin-right: 5px;
   border-radius: 5%;
+  
 }
 
 .spacex_page:hover {
@@ -255,6 +256,10 @@ body {
   background-color: #004a7a;
   text-align: center;
   text-decoration:none
+}
+
+.spacer {
+  margin: 50px;
 }
 
   /* For mobile phones: */
