@@ -58,7 +58,7 @@ pycairo==1.16.2
 pycups==1.9.73
 pygame==2.1.2
 PyGObject==3.36.0
-pyinstaller==6.0.0
+# pyinstaller==6.0.0
 pyinstaller-hooks-contrib==2023.9
 PyJWT==1.7.1
 pymacaroons==0.13.0
