@@ -76,7 +76,7 @@ requests-unixsocket==0.2.0
 SecretStorage==2.3.1
 simplejson==3.16.0
 six==1.14.0
-soupsieve==2.5
+# soupsieve==2.5
 systemd-python==234
 tkcalendar==1.6.1
 tkinterdnd2==0.3.0
