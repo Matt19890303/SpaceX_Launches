@@ -20,7 +20,7 @@ distro==1.4.0
 entrypoints==0.3
 et-xmlfile==1.1.0
 fasteners==0.14.1
-Flask==3.0.0
+# Flask==3.0.0
 Frozen-Flask==1.0.1
 future==0.18.2
 gunicorn==21.2.0
