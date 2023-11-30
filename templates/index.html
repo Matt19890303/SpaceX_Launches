@@ -12,7 +12,319 @@
     <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}"/>
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}"/> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+        @font-face {
+        font-family: 'SpaceX';
+        src: url('/static/SpaceX.woff2') format('woff2'),
+        }
+
+        @font-face {
+        font-family: 'D-DIN';
+        src: url('/static/D-DIN.woff') format('woff');
+        }
+
+
+        body {
+        font-family: 'D-DIN', sans-serif;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        color: black;
+        position: relative;
+        background-image: url('/static/otherImages/dragon_in_space.jpg');
+        background-size: cover;
+        background-attachment: fixed; 
+        }
+
+        .header_container {
+            /* border: solid green; */
+            /* https://stackoverflow.com/questions/50999833/set-background-image-in-html-body-using-python-flask-framework */
+            /* background-image: url("/static/images/stars-1654074_1280.jpg"); */
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header_container h3 {
+            /* border: solid red; */
+            color: white;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            /* margin-right: 80px; */
+            font-family: 'SpaceX', sans-serif;
+        }
+
+        .header_container img {
+            width: 320px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .first_container {
+        margin: 15px;
+        }
+
+        .first_container_header {
+        font-weight: 600;
+        }
+
+
+        .nav {
+            margin-bottom: 50px;
+            background-color: none;
+        }
+
+
+        .launch-card {
+            color: white;
+            padding: 20px;
+            max-width: 100%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* From https://css.glass */
+            background: rgba(190, 216, 250, 0.19);
+            border-radius: 16px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.11);
+            backdrop-filter: blur(5.5px);
+            -webkit-backdrop-filter: blur(5.5px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            font-size: 20px;
+        }
+
+        .launch-card:hover {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.09);
+        }
+
+        .launch-image {
+            height: 100px;
+            width: 100px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+
+        .launch-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .launch-links a:link, .launch-links a:visited {
+            background-color: #005288;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 5px;
+            border-radius: 5%;
+        }
+
+        .launch-links a:hover, .launch-links a:active {
+            color: white;
+            background-color: #004a7a;
+        }
+
+        /* https://stackoverflow.com/questions/51701512/how-to-change-the-color-of-active-tab-in-bootstrap */
+        .nav-tabs .nav-item .nav-link {
+            color: white;
+            font-size: 10px;
+            font-family: 'SpaceX', sans-serif;
+        }
+        
+        .nav-tabs .nav-item .nav-link.active {
+            color: white;
+            background-color: #005288;
+        }
+
+
+        /* Upcoming */
+
+        .upcoming-launch-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(190, 216, 250, 0.19);
+            border-radius: 16px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.11);
+            backdrop-filter: blur(5.5px);
+            -webkit-backdrop-filter: blur(5.5px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            font-size: 20px;
+        }
+
+        .images-container {
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+
+        .images img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+
+        }
+
+        .launch_data{
+        padding: 10px;
+        }
+
+
+
+        .card_container {
+        color: white;
+        }
+
+        .launch_card {
+        border: solid 1px blue;
+        color: white;
+        }
+
+
+        /* Mission Names */
+        .mission_info {
+        display: flex;
+        }
+
+        .mission_name_title {
+        font-weight: 700;
+        padding-top: 3px;
+        }
+
+        .mission_name_data {
+        font-weight: 0;
+        margin-left: 10px;
+        }
+
+        /* Launch Dates */
+        .dates_info{
+        display: flex;
+        }
+
+        .launch_dates_title{
+        font-weight: 700;
+        padding-top: 3px;
+        }
+
+        .launch_dates {
+        font-weight: 0;
+        margin-left: 10px;
+        }
+
+        /* Launch Sites */
+        .launch_sites_info{
+        display: flex;
+        margin-top: 10px;
+        }
+
+        .launch_sites_title {
+        font-weight: 700;
+        padding-top: 3px;
+        }
+
+        .launch_sites {
+        font-weight: 0;
+        margin-left: 10px;
+        }
+
+
+        /* Launch Times */
+        .launch_times_info {
+        display: flex;
+        margin-bottom: 10px;
+        }
+
+        .launch_times_title {
+        font-weight: 700;
+        padding-top: 3px;
+        }
+
+        .launch_times {
+        font-weight: 0;
+        margin-left: 10px;
+        }
+
+
+        .spacex_page {
+        background-color: #005288;
+        color: white;
+        padding: 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 5px;
+        border-radius: 5%;
+        
+        }
+
+        .spacex_page:hover {
+        color: white;
+        background-color: #004a7a;
+        text-align: center;
+        text-decoration:none
+        }
+
+        .spacer {
+        margin: 50px;
+        }
+
+        /* For mobile phones: */
+        @media only screen and (min-width: 450px) {
+            .launch-card {
+                max-width: 100%;
+                flex-direction: row;
+            }
+
+            .header_container img {
+                width: 500px;
+                margin: 0 auto;
+            }
+
+            .header_container h3 {
+            margin-right: 80px;
+            font-size: 18px;
+            }
+
+            .nav-tabs .nav-item .nav-link {
+            font-size: 12px;
+            }
+
+        }
+
+        @media only screen and (min-width: 760px) {
+            /* For desktop: */
+            .header_container img {
+                width: 700px;
+            }
+
+            .header_container h3 {
+            font-size: 30px;
+        }
+
+            .nav-tabs .nav-item .nav-link {
+            font-size: 13px;
+            }
+
+            .upcoming-launch-card {
+            display: flex;
+            flex-direction: row;
+            }
+
+        }
+    </style>
+</head>
+    
 <body>
 
     <div class="header_container">
