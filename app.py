@@ -4,7 +4,6 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 import re
-import systemd
 
 app = Flask(__name__)
 # Web route
@@ -149,7 +148,7 @@ for div in launch_description:
         first_p_text = first_p.get_text(strip=True)
         descriptions.append(first_p_text)
 
-if __name__ == "__main__":
-    # Anytime we make a change inside of our python file it will automatically update the webserver for us.
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     # Anytime we make a change inside of our python file it will automatically update the webserver for us.
+#     app.run(debug=True)
 
