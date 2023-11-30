@@ -1,10 +1,10 @@
 # Use Flask to setup a website using python 
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 import re
-
+import systemd
 
 app = Flask(__name__)
 # Web route
@@ -15,7 +15,6 @@ app = Flask(__name__)
 def index():
     # Calculate the number of entries
     data_length = len(dates)
-    # return render_template("index.html", launches=launches, name=name, text=text, content=content)
     return render_template("index.html", launches=launches, header=header, header_text=header_text, data_length=data_length, dates=dates, mission_name=mission_name, launch_times=launch_times, launch_sites=launch_sites, descriptions=descriptions)
 
 # Create filter to pop off the unnecessary times/details on the date
@@ -41,7 +40,6 @@ def fetch_spacex_launches():
     else:
         return []
     
-    
 # function to categorise launches as successful, failed or upcoming
 def categorise_launches(Launches):
     # looking through launches array and filtering this and adds it to success variable if the keys "success" is in the data and the key "upcoming" is not
@@ -62,8 +60,6 @@ def categorise_launches(Launches):
 ####################################################################
 
 launches = categorise_launches(fetch_spacex_launches())
-
-
 
 # # https://www.youtube.com/watch?v=F1mkrEfM_ZU
 # # Upcoming Launches
@@ -91,7 +87,6 @@ launch_sites = []
 launch_times = []
 descriptions = []
 
-
 # Lauch Date
 # Find all elements with the desired class name and extract their text
 launch_date_name = doc.find_all(class_='launchdate')
@@ -101,7 +96,6 @@ for date_name in launch_date_name:
     text = date_name.get_text()
     dates.append(text)
 
-
 # Mission name
 # Find all elements with the desired class name and extract their text
 launch_name = doc.find_all(class_='mission')
@@ -110,7 +104,6 @@ launch_name = doc.find_all(class_='mission')
 for launch_name in launch_name:
     text = launch_name.get_text()
     mission_name.append(text)
-
 
 # Launch times and sites
 # Find all elements with the desired class name and extract their text
@@ -142,7 +135,6 @@ for info in mission_data_list:
         launch_site = launch_site_match.group(1).strip()
         launch_sites.append(launch_site)
 
-
 # Mission Description
 # Find all elements with the desired class name and extract their text
 launch_description = doc.find_all(class_='missdescrip')
@@ -156,7 +148,6 @@ for div in launch_description:
     if first_p:
         first_p_text = first_p.get_text(strip=True)
         descriptions.append(first_p_text)
-
 
 if __name__ == "__main__":
     # Anytime we make a change inside of our python file it will automatically update the webserver for us.
