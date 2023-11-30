@@ -1,0 +1,102 @@
+<!-- Allows us to use launch_card.html here -->
+{% from "launch_card.html" import render_launch %}
+<!-- {% from "launch_card.html" import upcoming_launch %} -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX Launches</title>
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}"/>
+<body>
+
+    <div class="header_container">
+        <img src="{{ url_for('static', filename='otherImages/logoSpaceX2.png') }}" />
+        <div>
+            <h3>Launches</h3>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#successful">Successful</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#failed">Failed</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#upcoming">Upcoming</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="successful" class="container tab-pane active">
+            {% for launch in launches.successful %}
+            {{render_launch(launch)}}
+            {% endfor %}
+        </div>
+
+        <div id="failed" class="container tab-pane fade">
+            {% for launch in launches.failed %}
+            {{render_launch(launch)}}
+            {% endfor %}
+        </div>
+
+        <div id="upcoming" class="container tab-pane fade">
+            <div class="launch-card">
+                <div class="first_container">
+                    <h3 class="first_container_header">{{header}}</h3>
+                    <p class="first_container_text">{{header_text}}</p>
+                </div> 
+            </div>
+            <div class="card_container">
+                {% for i in range(data_length) %}
+                <div class="upcoming-launch-card">
+                    <div class="image-container">
+                        {% for image_file in image_files %}
+                            <img src="{{ url_for('static', filename=images) }}" alt="{{ images }}">
+                        {% endfor %}
+                    </div>
+
+                    <div class="launch_data">
+                        <div class="mission_info">
+                            <h5 class="mission_name_title">Mission name:</h5>
+                            <div class="mission_name_data">{{ mission_name[i] }}</div>
+                        </div>
+    
+                        <div class="dates_info">
+                            <h5 class="launch_dates_title">Mission date:</h5>
+                            <div class="launch_dates">{{ dates[i] }}</div>
+                        </div>
+                        
+                        <div class="launch_sites_info">
+                            <h5 class="launch_sites_title">Launch site: </h5>
+                            <div class="launch_sites">{{ launch_sites[i] }}</div>
+                        </div>
+    
+                        <div class="launch_times_info">
+                            <h5 class="launch_times_title">Launch time: </h5>
+                            <div class="launch_times"> {{ launch_times[i] }}</div>
+                        </div>
+                        
+                        <p>{{ descriptions[i] }}</p>
+                        <a class="spacex_page" href="https://www.spacex.com/launches/mission/?missionId=sl-6-25" target="_blank">SpaceX Website</a>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+            
+    <div class="spacer"></div>
+
+
+</body>
+</html>
